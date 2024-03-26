@@ -540,6 +540,7 @@ OLD_PATH="$PATH";
 export PATH="$AKHOME/bin:$AKHOME/tools:$PATH";
 
 if [ -f banner ]; then
+  ui_print " " " ";
   ui_printfile banner;
   ui_print " " " ";
 fi;
@@ -561,6 +562,9 @@ do_devicecheck;
 do_versioncheck;
 do_levelcheck;
 do_vendorlevelcheck;
+
+# used by kyriepatch
+export ZIPFILE
 
 ui_print "Installing...";
 # hack to maintain support for anykernel.sh files that weren't updated correctly along with the AK core
